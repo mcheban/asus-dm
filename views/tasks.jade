@@ -1,0 +1,27 @@
+ol#tasks-list
+  each task in tasks
+    li(id=task.id, class='task')
+      span.status(class=task.status) &#160;
+      span.buttons
+        if task.status !== 'paused'
+          button.action(data-task=task.id, data-action='paused', data-type=task.type) ❚❚
+        else
+          button.action(data-task=task.id, data-action='start', data-type=task.type) ▶
+      span.type #{task.type}
+      span.name(title=task.fileName) !{task.fileName}
+      span.progress
+        progress(max='100', value=task.percent, class=!task.size ? 'error' : '')
+        if task.size
+          span.progress-label
+            span #{task.doneSize} of #{task.size} (#{task.percent} %)
+      span.speed
+        if task.status !== 'finished'
+          span.down #{task.download}&#160;KB/s
+        if task.type === 'BT'
+          span.up #{task.upload}&#160;KB/s
+      span.peers
+        if task.type === 'BT'
+          | #{task.peers} Peers
+      span.buttons
+        button.action(data-task=task.id, data-action='cancel', data-type=task.type) ❌
+      

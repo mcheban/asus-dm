@@ -1,0 +1,35 @@
+extends layout
+
+block content
+  #wrapper
+    #header
+      .section-content
+        button#showAdd ➕
+        
+        span.count-wrapper
+          span#count 0
+          | &#160;Tasks
+        span.total-speed
+          span.total-down
+            span#totalDown 0
+            | &#160;KB/s
+          span.total-up
+            span#totalUp 0
+            | &#160;KB/s
+        span.buttons
+          button.action(data-action='pause_all') Pause all
+          button.action(data-action='start_all') Resume all
+          button.action(data-action='clear') Clear completed
+        div#addBox
+          form(id='addForm', method='post', action='/tasks/file', enctype='multipart/form-data')
+            input(id='addFile', type='file', name='filename')
+            textarea(id='addUrl', name='url')
+            div
+              input(id='add', type='submit', value='Add')
+
+    #content
+      #tasks.section-content
+    
+    #footer
+      .section-content
+        

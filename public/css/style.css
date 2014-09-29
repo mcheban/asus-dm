@@ -1,0 +1,205 @@
+body, div, p, span, ul, ol, li, input, button { padding:0;margin:0 }
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+body {
+  background: #ddd;
+  color: #000;
+/*
+  font-family:'Open Sans Condensed','Arial',Tahoma,sans-serif;
+*/
+  font-family:'Arial',Tahoma,sans-serif;
+  font-size: 16px;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+button, input[type=submit] {
+  display: inline-block;
+  border: 1px solid #aaa;
+  background-color: #ccc;
+  line-height: 1.5em;
+  vertical-align: middle;
+}
+#wrapper {
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+#header {
+  display: table-row;
+  height: 1px;
+  background: #aaa;
+}
+#content {
+  display: table-row;
+  height: auto;
+}
+#footer {
+  display: table-row;
+  height: 1px;
+  background: #aaa;
+}
+.section-content {
+  padding: 0.5em;
+}
+#header #showAdd {
+  margin-right: 1em;
+  width: 2em;
+}
+#header #addBox {
+  display: none;
+  padding: 0.5em 0;
+}
+#header #addBox input[type=file] {
+  /*width: 25em;*/
+}
+#header #addBox textarea {
+  width: 25em;
+}
+#header #addBox * {
+  display: block;
+}
+/*
+#header form {
+  display: inline-block;
+  margin-right: 1em;
+*/
+#tasks-list {
+  list-style: none;
+}
+#tasks-list .task {
+  font-size: 12px;
+  padding: 0.15em;
+  border-top: 1px solid #ccc;
+}
+#tasks-list .task:first-child {
+  border-top: none;
+}
+#tasks-list .task:hover {
+  background: #aaa;
+}
+#tasks-list .task span {
+  display: inline-block;
+  vertical-align: middle;
+}
+#tasks-list .task > span {
+  margin-right: 0.5em;
+  margin-bottom: 0.1em;
+}
+#tasks-list .task .status {
+  width: 20px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+#tasks-list .task .status.downloading {
+  background-image: url('/images/downloading.png');
+}
+#tasks-list .task .status.finished {
+  background-image: url('/images/finished.png');
+}
+#tasks-list .task .status.error {
+  background-image: url('/images/error.png');
+}
+#tasks-list .task .status.seeding {
+  background-image: url('/images/seeding.png');
+}
+#tasks-list .task .status.paused {
+  background-image: url('/images/paused.png');
+}
+#tasks-list .task .type {
+  width: 3em;
+}
+#tasks-list .task .name {
+  width: 30em;
+/*
+  font-family:'Open Sans Condensed','Arial',Tahoma,sans-serif;
+  font-size: 1.2em;
+*/
+  font-weight: bold;
+  white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+}
+#tasks-list .task .progress {
+  width: 16em;
+  height: 1.5em;
+}
+#tasks-list .task progress {
+  color: #80c0ff;
+  font-size: .6em;
+  text-indent: .5em;
+  border: 1px solid #ccc;
+  background: #eee;
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+}
+#tasks-list .task progress.error {
+  border: 1px solid #f00;
+  color: #fcc;
+  background: #fcc;
+}
+#tasks-list .task progress::-moz-progress-bar {
+  background: #ccc;
+}
+#tasks-list .task progress.error::-moz-progress-bar {
+  background: #fcc;
+}
+#tasks-list .task .progress-label {
+  margin-left: -16em;
+}
+#tasks-list .task .progress-label span {
+  position:relative;
+  width: 16em;
+  height: 1.5em;
+  line-height: 1.5em;
+  vertical-align: middle;
+  text-align: center;
+}
+#tasks-list .task .speed {
+  width: 14em;
+}
+#tasks-list .task .speed .down, #tasks-list .task .speed .up  {
+  margin-right: 0.5em;
+}
+#tasks-list .task .speed .down:before {
+  content: '↓ ';
+}
+#tasks-list .task .speed .up:before {
+  content: '↑ ';
+}
+#tasks-list .task .peers {
+  width: 5em;
+}
+.count-wrapper {
+  font-weight: bold;
+  margin-right: 1em;
+}
+.total-speed {
+  margin-right: 1em;
+}
+.total-speed .total-down, .total-speed .total-up {
+  margin-right: 1em;
+}
+.total-speed .total-down:before {
+  content: '↓ ';
+}
+.total-speed .total-up:before {
+  content: '↑ ';
+}
+button.action {
+  width: 2.5em;
+  margin-right: 0.2em;
+}
+#header .buttons button.action {
+  width: auto;
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #000 !important;
+}
+a:hover {
+  text-decoration: underline;
+}
